@@ -2,10 +2,10 @@
 
 ## Introduction
 
-Ained audience are the people who have played Skull King or know about it.
-This game is a ....
+Aimed audience are the people who have played Skull King or know about it.
+To understand the dynmanics of the game...
 
-Skull King is a strategic card game that combines the excitement of bid-taking with unique special cards and a pirate theme. Players must balance the risk and reward of their bids and use their cards wisely to outwit their opponents and win the most points.
+This game is a strategic card game that combines the excitement of bid-taking with unique special cards and a pirate theme. Players must balance the risk and reward of their bids and use their cards wisely to outwit their opponents and win the most points.
 - Objective
 The goal of the game is to score the most points by correctly predicting the number of bids you will win each round.
 Each round begins with a YoHoHO and the players placeing their bids.
@@ -21,6 +21,11 @@ Catching the Mermaid with the Skull King: 30 points.
 - End of the game
 The player having the highest total points at the end of the 10th round is the winner and is titled at Skull King
 
+--> Interactive analysis helps in understanding the dynamics and the complexity of the game. 
+--> give the time for this project couly only focus on one game and limited to basic representation of statistic analysis....
+-->  a bigger dataset will be able to provide better information on which strategies work the best and which don't.
+--> Can create a risk index
+--> could also improve the interactivity by adding the YoHoHo sound effect when a round is clicked --> improve user experience.
 ## Data
 - Among many games played with my friends, one game's scoring was opted to be utilized as the dataset for this project
 - 
