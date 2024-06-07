@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--background image :https://www.bing.com/images/create/generate-an-ai-image-of-aged2c-faded-brown-parchmen/1-665ef92a2f3b4f978db1a72644842672?id=rHV9R4EcNggmESC9CNYSdQ%3d%3d&view=detailv2&idpp=genimg&thId=OIG1.2p1eaFnjXqY78aAXZGuf&FORM=GCRIDP&ajaxhist=0&ajaxserp=0-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull King project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image">
+        <!--source: ludikerborg.free.fr/Jeux/skull_king/SKULL%20KING.pdf-->
+    </div>
+    <div class = "titre">
+        <!--source: https://www.photoroom.com/fr/outils/detourer-une-image --> 
+    </div>
+    <div class="titre_2"> <h2> - Analysis of one game of 10 rounds with 6 players</h2></div>
+    <div class="titre_3"> <h3> Please select a round or  <br> a player and navigate <br> through various plots</h3></div>
+    <!--Inspiration --> <!--source: https://github.com/maladesimaginaires/intnetviz/blob/master/index.html-->
+    <div id="game_rules" class="game_rules">
+        <button id="Info_div"> Game Rules </button>
+        <div id="rules_text" class="rules_text">
+    </div>
+    <div class="container">
+        <div id="network" class="network"></div>
+            <div class = "Tours">
+                <button id="T1" >Round 1 </button>
+                <button id="T2">Round 2 </button>
+                <button id="T3">Round 3 </button>
+                <button id="T4">Round 4 </button>
+                <button id="T5">Round 5 </button>
+                <button id="T6">Round 6 </button>
+                <button id="T7">Round 7 </button>
+                <button id="T8">Round 8 </button>
+                <button id="T9">Round 9 </button>
+                <button id="T10">Round 10 </button>
+            </div>
+
+        <div id="plot1" class="round"></div>
+        <div id="plot2" class="player"></div>
+    </div>
+<!-- Link scripts -->
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+      <script src="Data/data_t.js"></script>
+      <script src="Data/data.js"></script>
+      <script src="script.js"></script>
+</body>
+</html>
