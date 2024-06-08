@@ -2,30 +2,31 @@
 
 ## Introduction
 
-Aimed audience are the people who have played Skull King or know about it.
-To understand the dynmanics of the game...
+This project is for players who have experience with or knowledge of Skull King. It consists of a basic interactive anaylsis of one game if 10 rounds with 6 players. 
 
 This game is a strategic card game that combines the excitement of bid-taking with unique special cards and a pirate theme. Players must balance the risk and reward of their bids and use their cards wisely to outwit their opponents and win the most points.
-- Objective
+
+### Objective 
 The goal of the game is to score the most points by correctly predicting the number of bids you will win each round.
-Each round begins with a YoHoHO and the players placeing their bids.
-- Scoring 
-If a player’s bid matches the number of tricks won:
-They score 20 points per trick, plus a bonus for a correct bid.
+Each round begins with a YoHoHO and the players place their bids.
+
+### Scoring 
+If a player’s bid matches the number of bids won:
+They score 20 points per bid, plus a bonus for a correct bid.
 If a player’s bid is incorrect:
-They lose 10 points for each trick they were off by.
-- Special bonuses --> inset game_rules image
-Winning a trick with the Skull King: 50 points.
-Winning all tricks in a round: 50 points per round number.
+They lose 10 points for each bid they were off by.
+![game_rules](https://github.com/DikshaAcharya/Skull_King_Game_Analysis/assets/132992878/ddf3a6ac-56e7-4ed5-b46a-1c137fa03a87)
+
+#### Special bonuses 
+Winning a bids with the Skull King: 50 points.
+Winning all bids in a round: 50 points per round number.
 Catching the Mermaid with the Skull King: 30 points.
-- End of the game
+
+### End of the game
 The player having the highest total points at the end of the 10th round is the winner and is titled at Skull King
 
---> Interactive analysis helps in understanding the dynamics and the complexity of the game. 
---> give the time for this project couly only focus on one game and limited to basic representation of statistic analysis....
--->  a bigger dataset will be able to provide better information on which strategies work the best and which don't.
---> Can create a risk index
---> could also improve the interactivity by adding the YoHoHo sound effect when a round is clicked --> improve user experience.
+By analyzing the game data and implementing new features, we can gain deeper insights into Skull King and enhance the game's appeal for players. Interactive analysis helps in understanding the game's dynamics and complexity. 
+
 ## Data
 - Among many games played with my friends, one game's scoring was opted to be utilized as the dataset for this project
 - 
@@ -44,6 +45,10 @@ full image
     - plot dedicated to each round representing the points and bids made by the players --> image zoom
     - plot dedicated to each player's performance accross all the rounds --> image zoom
     - An interactive div that slids in and out, which contains a brief description of the game --> image zoom (video??)
+      
+## To go further
+Given the time constraints, this project will focus on one game and provide a basic representation of statistical analysis. However, a larger dataset would offer better insights into effective and ineffective strategies. Additionally, creating a risk index could evaluate different strategies, and adding features like a "YoHoHo" sound effect when a round is clicked could improve the user experience.
+
 ## Author
 - Diksha Acharya
 - Supervised by Isaac Pante
