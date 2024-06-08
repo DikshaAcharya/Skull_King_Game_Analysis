@@ -16,7 +16,7 @@ They score 20 points per bid, plus in some cases a bonus for a correct bid.
 If a player’s bid is incorrect:
 They lose 10 points for each bid they were off by.
 
-![game_rules](https://github.com/DikshaAcharya/Skull_King_Game_Analysis/assets/132992878/ddf3a6ac-56e7-4ed5-b46a-1c137fa03a87)
+![game_rules](Images/Readme_images/game_rules.jpg)
 
 #### Special bonuses 
 Winning a bid with the Skull King: 50 points.
@@ -29,10 +29,15 @@ By analyzing the game data and implementing new features, we can gain deeper ins
 Interactive analysis helps in understanding the game's dynamics and complexity. 
 
 ## Data
-- Among many games played with my friends, one game's scoring was opted to be utilized as the dataset for this project
-- digitalised the data into an execl table
-- converted the data into nodes and links in js format for network visualisation 
-- Opted to have another JS data file in different sturture for plot visualisation 
+Among the many games played with my friends, one game's scoring was chosen as the dataset for this project. 
+The data was digitized into an Excel table:
+![Excel_data](Images/Readme_images/Excel_data.png)
+
+Then converted into nodes and links in JavaScript format for network visualization:
+![JS_data_network](Images/Readme_images/Js_data_network.png)
+
+Additionally, another JavaScript data file with a different structure was created for plot visualization.
+![JS_data_all](Images/Readme_images/Js_data_all.png)
 
 ## Tools
 - Coding of this project is done by D3 --> Small intro of D3
