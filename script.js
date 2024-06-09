@@ -150,6 +150,7 @@ function createNetwork(dataset) {
             });
     } 
     // Error in drag functions solved through chatGPT --> source: https://chatgpt.com/share/3144c16b-37b3-43b0-9781-fe2f86afe804
+    //~~~~~~~ Start of error ~~~~~~~
     function dragstarted(event, d) {
         if (!event.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x;
@@ -164,8 +165,9 @@ function createNetwork(dataset) {
         d.fx = null;
         d.fy = null;
     }
+    //~~~~~~~ End of error ~~~~~~~
 
-    // ------ Add Title ------- 
+    // ------ Add legend ------- 
     network.append("text")
         .data(dataset.nodes)
         .attr("x", width/2-85)
@@ -174,7 +176,6 @@ function createNetwork(dataset) {
         .attr("font-family", "Papyrus, sans-serif")
         .text(d => "Round " + d.tours)
 
-    // ------ Add legend ------- 
     // nodes and text --> source: https://d3-graph-gallery.com/graph/custom_legend.html
     network.append("circle")
         .attr("cx", width/2-100)
@@ -226,6 +227,7 @@ function createNetwork(dataset) {
         .attr("y", height-150)
         .attr("font-size", "16px")
         .text("Mutually loosing");
+
     // -------- Click on a node = activate player function --------
     // Inspired by : https://github.com/maladesimaginaires/intnetviz/blob/master/include/js/main.js
     nodes.on("click", function(event, d) {
@@ -250,11 +252,9 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Tour number:", tourNumber)
             network.selectAll("*").remove()
             createNetwork(window["T_"+ tourNumber]);
-        
 
             createPlot_round(window["T_"+ tourNumber]); // added later to have this function also activated when a round is clicked (not from chatGPT)
             //PlotContainer2.selectAll("svg").remove();
-            PlotContainer2.selectAll(".player-info").remove();
         });
     }
 });
@@ -625,10 +625,10 @@ function createPlot_player(dataset, playerID, clickedround) {
         .text("Estimates");
     
     // Supplementary information on Information     
-    PlotContainer2.selectAll("#player-info").remove();
+    PlotContainer2.selectAll("#player_info").remove();
     //mutltiple text lines to be displayed like in html --> source: https://www.codecademy.com/resources/docs/d3/styling/html
     PlotContainer2.append("div")
-        .attr("id", "player-info")
+        .attr("id", "player_info")
         .style("left", (width + 100) + "px")
         //.style("top", (height/2)+ "px")
         .style("font-size", "14px")
@@ -680,7 +680,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }
     });
-
 });
 //~~~~ End of generated code ~~~~~
 
