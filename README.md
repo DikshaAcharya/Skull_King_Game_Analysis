@@ -17,8 +17,7 @@ Each round begins with a YoHoHo and the players place their bids using hand gues
 ### Scoring 
 - If a player’s bid matches the number of wins:
 
-  They score 20 points per bid
-  Plus a bonus point in case of:
+  They score 20 points per bid plus a bonus point in case of:
   
       - Winning a bid with the Mermaid over Skull King = 50 points
       - Catching the pirates with the Skull King = 30 points per pirate 
