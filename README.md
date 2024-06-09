@@ -92,13 +92,16 @@ Here is how the webpage looks with all the interaction active: or just photo?
 
 https://github.com/DikshaAcharya/Skull_King_Game_Analysis/assets/132992878/91ffdc43-27b8-4b55-81c5-3157f1d41b7f
 
+## How to use
+
+All the files can be downloaded on your laptop. By clicking the index.html file, the webpage will be opened in default browers. As this project was developed using chrome browser in full size-screen format. This would assure an optimal usage of the website.
+
 ## To go further
 Given the time constraints, this project will focus on one game and provide a basic representation of statistical analysis. However, a larger dataset would offer better insights of effective and ineffective strategies. Additionally, creating a risk index could evaluate different strategies, and adding features like a "YoHoHo" sound effect when a round is clicked could improve the user experience.
 
 ## Author
-- Diksha Acharya
-- Supervised by Isaac Pante
+
+This project was built by Diksha Acharya as part of the course on "Visualisation des données" in the University of Lausanne given by professor Isaac Pante. Date of the conclusion of the project: June 2024.
+
 ## Acknowledgement
-- Player of the game
-- professor for the supervision
-- inputs from users
+A big thank you to the players of the Skull King Game for their participation and data, to the professor for invaluable supervision, and to the users for their constructive inputs. These contributions have been essential to in imporving this project. 
