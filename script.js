@@ -54,6 +54,7 @@ function createNetwork(dataset) {
         //.style("stroke-width", "2px");
 
     // Main source for network = github --> source: https://github.com/BlastWind/D3.js-Tutorial/blob/master/d3.js%20tutorial/Part%205/starting_code.html
+    //                           github --> source: https://github.com/maladesimaginaires/intnetviz/tree/master/scripts      
     //                                  --> source: https://maladesimaginaires.github.io/intnetviz/?author=moliere&play=l_avare
     //                           youtube --> source: https://www.youtube.com/watch?v=1vHjMxe-4kI&list=PLPtgdQ4YE9cgdPwOKShhPHdVEseLPGd_t&index=6
     // Network style (for inspiration): https://gist.github.com/emeeks/c2822e1067ff91abe24e
@@ -651,10 +652,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: "1) If a player's bid matches the number of wins:"},
         { text: "  They score 20 points per bid"},
         { text: "2) Plus a bonus in case of:"},
-        { text: "- Winning a bid with the Skull King = 50pts"},
-        { text: "- Catching the Mermaid with the Skull King = 30pts"},
+        { text: "- Winning a bid with the Mermaid over Skull King = 50pts"},
+        { text: "- Catching the Pirates with the Skull King = 30pts per pirate"},
         { text: "3) If a player's bid is incorrect:"},
-        { text: "They lose 10 points for each bid they were off"},
+        { text: "They lose 10 points for each bid they were off."},
     ];
 
     var rulesTextDiv = document.getElementById('rules_text');
