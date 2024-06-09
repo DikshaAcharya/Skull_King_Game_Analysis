@@ -54,13 +54,14 @@ function createNetwork(dataset) {
         //.style("stroke-width", "2px");
 
     // Main source for network = github --> source: https://github.com/BlastWind/D3.js-Tutorial/blob/master/d3.js%20tutorial/Part%205/starting_code.html
+    //                                  --> source: https://maladesimaginaires.github.io/intnetviz/?author=moliere&play=l_avare
     //                           youtube --> source: https://www.youtube.com/watch?v=1vHjMxe-4kI&list=PLPtgdQ4YE9cgdPwOKShhPHdVEseLPGd_t&index=6
     // Network style (for inspiration): https://gist.github.com/emeeks/c2822e1067ff91abe24e
     // Basic function were inspired by in class
     var simulation = d3.forceSimulation(dataset.nodes)
         .force("link", d3.forceLink(dataset.links).id(function(d){return d.id}))
         .force("charge", d3.forceManyBody().strength(-4000))
-        .force("center", d3.forceCenter(width/2+80, height/2-70))
+        .force("center", d3.forceCenter(width/2+80, height/2-90))
         .on("tick", ticked);
 
     var links = network
@@ -75,7 +76,7 @@ function createNetwork(dataset) {
         .style("stroke-width", "2px")
         .style("fill", "none")
         .style("stroke", function(d) {
-            if (d.weight == "0") {return "grey"} 
+            if (d.weight == "0") {return "darkgrey"} 
             else if (d.weight == "1") {return "green"} 
             else if (d.weight == "2") {return "red"};    
         });
@@ -87,17 +88,17 @@ function createNetwork(dataset) {
         .enter()
         .append("circle")
         // code adapted
-        .attr("r", d => (d.points + 15)/d.tours)
+        .attr("r", d => (d.points + 28)/d.tours)
         .attr("fill", "green")
         .classed("node-hover", true)
         .on('mouseover', function (event, d){
             d3.select(this).transition()
                 .duration('100')
-                .attr("r", d => ((d.points + 15)/d.tours)+10);})
+                .attr("r", d => ((d.points + 28)/d.tours)+10);})
         .on('mouseout', function (event, d) {
             d3.select(this).transition()
                     .duration('200')
-                    .attr("r", d => (d.points + 15)/d.tours);
+                    .attr("r", d => (d.points + 28)/d.tours);
             d3.select("#label").remove();
         }); 
 
@@ -105,7 +106,7 @@ function createNetwork(dataset) {
     var maxPoints = d3.max(dataset.nodes, (d) => d.points);
     nodes.attr("fill", function(d){
         if (d.points == maxPoints) {return "gold"}
-        else {return "grey"};
+        else {return "darkgrey"};
     });
    
     nodes.call(d3.drag()
@@ -124,8 +125,8 @@ function createNetwork(dataset) {
         .attr("font-size", "18px");
 
     function ticked() {
-        texts_1.attr('x', d=>d.x);
-        texts_1.attr('y', d=>d.y);
+        texts_1.attr('x', d=>d.x+5);
+        texts_1.attr('y', d=>d.y+5);
         links
             .attr("x1", function(d) {
                 return d.source.x;
@@ -166,8 +167,8 @@ function createNetwork(dataset) {
     // ------ Add Title ------- 
     network.append("text")
         .data(dataset.nodes)
-        .attr("x", width/2-20)
-        .attr("y", 438)
+        .attr("x", width/2-85)
+        .attr("y", height-200)
         .attr("font-size", "16px")
         .attr("font-family", "Papyrus, sans-serif")
         .text(d => "Round " + d.tours)
@@ -175,44 +176,55 @@ function createNetwork(dataset) {
     // ------ Add legend ------- 
     // nodes and text --> source: https://d3-graph-gallery.com/graph/custom_legend.html
     network.append("circle")
-        .attr("cx", width/2-50)
-        .attr("cy", height-140)
+        .attr("cx", width/2-100)
+        .attr("cy", height-180)
+        .attr("r", 8)
+        .style("fill", "darkgrey");
+    network.append("text")
+        .attr("x", width/2-85)
+        .attr("y", height-175)
+        .attr("font-size", "16px")
+        .text("Player number");
+
+    network.append("circle")
+        .attr("cx", width/2-100)
+        .attr("cy", height-155)
         .attr("r", 8)
         .style("fill", "yellow");
     network.append("text")
-        .attr("x", width/2-20)
-        .attr("y", height-135)
+        .attr("x", width/2-85)
+        .attr("y", height-150)
         .attr("font-size", "16px")
         .text("Player with maximum points");
      
     // Links --> source : https://d3-graph-gallery.com/graph/shape.html
     // Green line 
     network.append("line")
-        .attr("x1", width/2-75)
-        .attr("x2", width/2-25)        
-        .attr("y1", height-110)
-        .attr("y2", height-110)
+        .attr("x1", width/2+175)
+        .attr("x2", width/2+125)        
+        .attr("y1", height-180)
+        .attr("y2", height-180)
         .attr("stroke", 'green')
         .style("stroke-width", "2px");
     network.append("text")
-        .attr("x", width/2-20)
-        .attr("y", height-105)
+        .attr("x", width/2+180)
+        .attr("y", height-175)
         .attr("font-size", "16px")
-        .text("Winning players of the round");
+        .text("Mutually winning");
 
     // Red line
     network.append("line")
-        .attr("x1", width/2-75)
-        .attr("x2", width/2-25)        
-        .attr("y1", height-80)
-        .attr("y2", height-80)
+        .attr("x1", width/2+175)
+        .attr("x2", width/2+125)        
+        .attr("y1", height-155)
+        .attr("y2", height-155)
         .attr("stroke", 'red')
         .style("stroke-width", "2px");
     network.append("text")
-        .attr("x", width/2-20)
-        .attr("y", height-75)
+        .attr("x", width/2+180)
+        .attr("y", height-150)
         .attr("font-size", "16px")
-        .text("Loosing players of the round");
+        .text("Mutually loosing");
     // -------- Click on a node = activate player function --------
     // Inspired by : https://github.com/maladesimaginaires/intnetviz/blob/master/include/js/main.js
     nodes.on("click", function(event, d) {
@@ -242,10 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
             createPlot_round(window["T_"+ tourNumber]); // added later to have this function also activated when a round is clicked (not from chatGPT)
             //PlotContainer2.selectAll("svg").remove();
             PlotContainer2.selectAll(".player-info").remove();
-            
-
         });
-
     }
 });
 // ~~~~~~ End of generated code ~~~~~~~~
@@ -378,7 +387,7 @@ function createPlot_round(dataset) {
                     .attr("r", 5);
             d3.select("#label").remove();
         })
-        .style("fill", "blue");
+        .style("fill", "brown");
     
     // Display axis --> source: https://d3js.org/d3-axis
     // Axis without decimal values --> source: https://jesperkiledal.com/blog/d3-axis-tips-and-tricks/
@@ -424,7 +433,7 @@ function createPlot_round(dataset) {
         .attr("transform", "rotate(-90)")
         .attr("font-family", "Papyrus")
         .attr("font-size", "16px")
-        .style("fill", "blue")
+        .style("fill", "brown")
         .text("Bids");
 }
 
@@ -498,7 +507,7 @@ function createPlot_player(dataset, playerID, clickedround) {
     plot_player.append("path")
             .datum(estimation)
             .attr("fill", "none")
-            .attr("stroke", "grey")
+            .attr("stroke", "blue")
             .attr("stroke-width", 1,5)
             .attr("d", d3.line()
                 .x((d,i) => xScale(i+1))
@@ -538,7 +547,7 @@ function createPlot_player(dataset, playerID, clickedround) {
              .attr("r", 5);
         d3.select("#label").remove();
         })
-    .style("fill", "grey")    
+    .style("fill", "blue")    
   /*       .style("fill", function(d, i) {
             if (i == clickedround-1) {return "red"}
             else {return "grey"};
@@ -573,14 +582,6 @@ function createPlot_player(dataset, playerID, clickedround) {
             d3.select("#label").remove();
         })
         .style("fill", "green")
-/*         .style("fill", function(d, i) { 
-            if (i == clickedround-1) {return "red"}
-            else {return "blue"};
-        })
-        .style("r", function(d, i) {
-            if (i == clickedround-1) {return "10"}
-            else {return "5"};
-        }); */
 
     plot_player.append("g")
         .attr("transform", `translate(0,${height/2})`)
@@ -619,7 +620,7 @@ function createPlot_player(dataset, playerID, clickedround) {
         .attr("transform", "rotate(-90)")
         .attr("font-family", "Papyrus")
         .attr("font-size", "18px")
-        .style("fill", "grey")
+        .style("fill", "blue")
         .text("Estimates");
     
     // Supplementary information on Information     
@@ -641,37 +642,30 @@ function createPlot_player(dataset, playerID, clickedround) {
 document.addEventListener('DOMContentLoaded', function() {
     // text content --> source: https://stoysnetcdn.com/gdpa/gdpa3056/gdpa3056.jpg
     // text variable --> source: https://stackoverflow.com/questions/58771487/create-a-button-to-hide-show-rect-and-text-in-d3-js
-    var game_text = [
-        { text: "AHOY MATEY!"},
-        { text: "Get ready for a challenge" },
-        { text: "you'll enjoy for years to come!"},
-        { text: "Consider yer cards to"},
-        { text: "make a scheme:"},
-        { text: "Make yer bid on the"},
-        { text: "count of three..."},
-        { text: "With a Yo,Ho,Ho,"},
-        { text: "you will see"},
-        { text: "What each player's bid will be!"},
-        { text: "Bid one, bid big,"},
-        { text: "or even bid zero!"},
-        { text: "Get yer exact bid to"},
-        { text: "advance yer score"},
-        { text: "Beware of the Jolly Roger,"},
-        { text: "Pirates, Tigress & Skull King!"},
-        { text: "Every hand can be"},
-        { text: "a winning hand!"},
-        { text: "Bid right! Then get yer bid!"}
+    var rules = [
+        { text: "Objective:"},
+        { text: "The goal of the game is to score the most points by correctly predicting the number of bids you will win each round."},
+        //{ text: "correctly predicting the number of bids you will"},
+        //{ text: "win each round."},
+        { text: "Scoring:"},
+        { text: "1) If a player's bid matches the number of wins:"},
+        { text: "  They score 20 points per bid"},
+        { text: "2) Plus a bonus in case of:"},
+        { text: "- Winning a bid with the Skull King = 50pts"},
+        { text: "- Catching the Mermaid with the Skull King = 30pts"},
+        { text: "3) If a player's bid is incorrect:"},
+        { text: "They lose 10 points for each bid they were off"},
     ];
 
     var rulesTextDiv = document.getElementById('rules_text');
 
-    game_text.forEach(function(line) {
+    rules.forEach(function(line) {
         var p = document.createElement('p');
         p.textContent = line.text;
         rulesTextDiv.appendChild(p);
     });
 
-    var infoButton = document.getElementById('Info_div');
+    var infoButton = document.getElementById('Rules_div');
     infoButton.addEventListener('click', function() {
         if (rulesTextDiv.style.display === 'none' || rulesTextDiv.style.display === '') {
             rulesTextDiv.classList.remove('slide-out');
@@ -685,5 +679,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }
     });
+
 });
 //~~~~ End of generated code ~~~~~
+
+// Game information Audio --> source: https://www.youtube.com/watch?v=0R6rZngcHGg
+/*var game_text = [
+    { text: "AHOY MATEY!"},
+    { text: "Get ready for a challenge" },
+    { text: "you'll enjoy for years to come!"},
+    { text: "Consider yer cards to"},
+    { text: "make a scheme:"},
+    { text: "Make yer bid on the"},
+    { text: "count of three..."},
+    { text: "With a Yo,Ho,Ho,"},
+    { text: "you will see"},
+    { text: "What each player's bid will be!"},
+    { text: "Bid one, bid big,"},
+    { text: "or even bid zero!"},
+    { text: "Get yer exact bid to"},
+    { text: "advance yer score"},
+    { text: "Beware of the Jolly Roger,"},
+    { text: "Pirates, Tigress & Skull King!"},
+    { text: "Every hand can be"},
+    { text: "a winning hand!"},
+    { text: "Bid right! Then get yer bid!"}
+];*/
+// Converted text to audio --> source: https://voicemaker.in/
+const audio = new Audio();
+audio.src="./Data/pirate_speech.mp3";
+audio.classed("info-hover", true);
