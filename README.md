@@ -2,7 +2,7 @@
   <img src="Images/title.png" alt="title">
 </p>
 
-# Skull King Game analysis
+# Skull King Game Analysis
 
 This project is for players who have experience in playing or knowledge of Skull King game. This work consists of a basic interactive anaylsis of one game of 10 rounds with 6 players. By analyzing the game data, we can gain deeper insights into Skull King and enhance game's appeal for players. Interactive analysis helps in understanding the game's dynamic and complexity. 
 
