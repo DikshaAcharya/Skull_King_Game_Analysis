@@ -44,7 +44,7 @@ Then converted into nodes and links in JavaScript format for network visualizati
 Additionally, another JavaScript data file with a different structure was created for plot visualization:
 ![JS_data_all](Images/JS_data_all.png)
 
-Audio data???
+- Audio data???
 
 ## Tools
 - D3.js: The coding for this project is done using D3.js, a powerful JavaScript library for producing dynamic, interactive data visualizations in web browsers. It utilizes HTML, SVG, and CSS to bring data to life through visual representation. For more information, feel free to consult their webpage: https://d3js.org/.
@@ -52,12 +52,15 @@ Audio data???
 - ChatGPT: Some parts of the code were generated using ChatGPT. Links to the conversations with ChatGPT are also included above the generated code for reference.
 - User Feedback: The interactivity of the project was enhanced based on valuable inputs from users, leading to a more engaging and user-friendly experience.
 
+- initiale idea image??
+
 ## Overview of the webpage
 ![welcome_page](Images/welcome_page.png)
 
 Main interactive funcitons:
 
 1- Audio message to welcome on the Skull King page.
+
 ![audio](Images/audio.png)
 
 - Has a message for the users when clicked on the "Climb aboard" button.
