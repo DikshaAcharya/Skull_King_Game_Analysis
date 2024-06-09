@@ -93,6 +93,11 @@ This functionality could be improved by having the audio played when the page is
 Here is how the webpage looks with all the interaction and visualization: 
 
 ![all_functions](Images/all_functions.png)
+![overview](Images/overview.mov)
+
+https://github.com/DikshaAcharya/Skull_King_Game_Analysis/assets/132992878/9b46c13d-6f08-41f9-9a10-5437fd32fc08
+
+
 
 
 ## How to use
