@@ -59,7 +59,6 @@ Main interactive funcitons and visualizations:
 ![audio](Images/audio.png)
 
 - Has a message for the users when clicked on the "Climb aboard" button.
-This functionality could be improved by having the audio played when the page is opened by a user. Another improvement would be to have the option to pause the audio as per will. 
 
 2- An interactive slide bar, which contains a brief description of the game.
 
@@ -94,15 +93,9 @@ Here is how the webpage looks with all the interaction and visualization:
 
 https://github.com/DikshaAcharya/Skull_King_Game_Analysis/assets/132992878/9b46c13d-6f08-41f9-9a10-5437fd32fc08
 
-
-
-
 ## How to use
 
 All the files can be downloaded on your laptop. By clicking the index.html file, the webpage will be opened in default browers. As this project was developed using chrome browser in full size-screen format. This would assure an optimal usage of the website.
-
-## To go further
-Given the time constraints, this project will focus on one game and provide a basic representation of statistical analysis. However, a larger dataset would offer better insights of effective and ineffective strategies. Additionally, creating a risk index could evaluate different strategies, and adding features like a "YoHoHo" sound effect when a round is clicked could improve the user experience.
 
 ## Author
 
