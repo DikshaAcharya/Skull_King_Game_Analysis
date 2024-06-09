@@ -49,8 +49,6 @@ Additionally, another JavaScript data file with a different structure was create
 - ChatGPT: Some parts of the code were generated using ChatGPT. Links to the conversations with ChatGPT are also included above the generated code for reference.
 - User Feedback: The interactivity of the project was enhanced based on valuable inputs from users, leading to a more engaging and user-friendly experience.
 
-- initiale idea image??
-
 ## Overview of the webpage
 ![welcome_page](Images/welcome_page.png)
 
@@ -108,7 +106,7 @@ Given the time constraints, this project will focus on one game and provide a ba
 
 ## Author
 
-This project was built by Diksha Acharya as part of the course on "Visualisation des données" in the University of Lausanne given by professor Isaac Pante. Date of the conclusion of the project: June 2024.
+This project was built by Diksha Acharya as part of the course on "Visualisation des données" in the University of Lausanne, given by professor Isaac Pante (SLI, Lettres, UNIL). Date of the conclusion of the project: June 2024.
 
 ## Acknowledgement
 A big thank you to the players of the Skull King Game for their participation and data, to the professor for invaluable supervision, and to the users for their constructive inputs. These contributions have been essential to in imporving this project. 
