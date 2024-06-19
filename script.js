@@ -79,7 +79,7 @@ function createNetwork(dataset) {
         .style("stroke", function(d) {
             if (d.weight == "0") {return "darkgrey"} 
             else if (d.weight == "1") {return "green"} 
-            else if (d.weight == "2") {return "red"};    
+            else if (d.weight == "2") {return "black"};    
         });
 
     var nodes = network.append("g")
@@ -88,9 +88,10 @@ function createNetwork(dataset) {
         .data(dataset.nodes)
         .enter()
         .append("circle")
+        .style("stroke", "black")
+        .style("stroke-width", "1px")
         // code adapted
         .attr("r", d => (d.points + 28)/d.tours)
-        .attr("fill", "green")
         .classed("node-hover", true)
         .on('mouseover', function (event, d){
             d3.select(this).transition()
@@ -106,7 +107,7 @@ function createNetwork(dataset) {
     // To adjust the size of the node with respect to the player's points (code adapted)
     var maxPoints = d3.max(dataset.nodes, (d) => d.points);
     nodes.attr("fill", function(d){
-        if (d.points == maxPoints) {return "gold"}
+        if (d.points == maxPoints) {return "green"}
         else {return "darkgrey"};
     });
    
@@ -181,6 +182,8 @@ function createNetwork(dataset) {
         .attr("cx", width/2-100)
         .attr("cy", height-180)
         .attr("r", 8)
+        .style("stroke", "black")
+        .style("stroke-width", "1px")
         .style("fill", "darkgrey");
     network.append("text")
         .attr("x", width/2-85)
@@ -192,7 +195,9 @@ function createNetwork(dataset) {
         .attr("cx", width/2-100)
         .attr("cy", height-155)
         .attr("r", 8)
-        .style("fill", "yellow");
+        .style("stroke", "black")
+        .style("stroke-width", "1px")
+        .style("fill", "green");
     network.append("text")
         .attr("x", width/2-85)
         .attr("y", height-150)
@@ -220,7 +225,7 @@ function createNetwork(dataset) {
         .attr("x2", width/2+125)        
         .attr("y1", height-155)
         .attr("y2", height-155)
-        .attr("stroke", 'red')
+        .attr("stroke", 'black')
         .style("stroke-width", "2px");
     network.append("text")
         .attr("x", width/2+180)
